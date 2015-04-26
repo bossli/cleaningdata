@@ -6,24 +6,30 @@ run_analysis <- function() {
         ## label variable names
         
         ## read test set
-        test <- read.table("./UCI HAR Dataset/test/X_test.txt")
-        
+        ##test <- read.table("./UCI HAR Dataset/test/X_test.txt")
+        test <- read.table("X_test.txt")
 
         ## read training set
-        train <- read.table("./UCI HAR Dataset/train/X_train.txt")
+        ##train <- read.table("./UCI HAR Dataset/train/X_train.txt")
+        train <- read.table("X_train.txt")
 
         ## read variable names
-        name <- read.table("./UCI HAR Dataset/features.txt")
+        ##name <- read.table("./UCI HAR Dataset/features.txt")
+        name <- read.table("features.txt")
 
         ## assign variable names to test and training set
         colnames(test) <- as.character(name$V2)
         colnames(train) <- as.character(name$V2)
 
         ## read subjects and labels
-        testsub <- read.table(file = "./UCI HAR Dataset/test/subject_test.txt")
-        testlabel <- read.table(file = "./UCI HAR Dataset/test/y_test.txt")
-        trainsub <- read.table(file = "./UCI HAR Dataset/train/subject_train.txt")
-        trainlabel <- read.table(file = "./UCI HAR Dataset/train/y_train.txt")
+        ##testsub <- read.table(file = "./UCI HAR Dataset/test/subject_test.txt")
+        ##testlabel <- read.table(file = "./UCI HAR Dataset/test/y_test.txt")
+        ##trainsub <- read.table(file = "./UCI HAR Dataset/train/subject_train.txt")
+        ##trainlabel <- read.table(file = "./UCI HAR Dataset/train/y_train.txt")
+        testsub <- read.table(file = "subject_test.txt")
+        testlabel <- read.table(file = "y_test.txt")
+        trainsub <- read.table(file = "subject_train.txt")
+        trainlabel <- read.table(file = "y_train.txt")
 
         
         ## add subject and label columns into 
